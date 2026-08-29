@@ -3,227 +3,420 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pip — Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for Pip, The Meal Prep Buddy." />
+  <title>Pip — The Meal Prep Buddy</title>
+  <meta name="description" content="Pip turns any recipe link into a shopping list that's already sorted by aisle. Save recipes, see macros, share one list with your family — right in your browser." />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="canonical" href="https://pipmeals.com/" />
+  <meta property="og:title" content="Pip — The Meal Prep Buddy" />
+  <meta property="og:description" content="Recipes in. Groceries sorted. Pip turns recipe links into aisle-sorted shopping lists you can share with your family." />
+  <meta property="og:url" content="https://pipmeals.com/" />
+  <meta property="og:image" content="https://pipmeals.com/assets/pip-mascot.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #9CCC65;
-      --primary-dark: #558B2F;
-      --bg: #FFF5E6;
+      --green: #9CCC65;
+      --green-dark: #558B2F;
+      --green-deeper: #33691E;
+      --green-ink: #325600;
+      --cream: #FFF5E6;
       --surface: #FFFFFF;
       --surface-tint: #f3f5e8;
-      --text: #5D4037;
-      --text-secondary: #8D6E63;
-      --text-muted: #A1887F;
+      --ink: #5D4037;
+      --ink-secondary: #8D6E63;
+      --ink-muted: #A1887F;
       --border: #E8E0D8;
+      --produce-bg: #C8E6C9; --produce-fg: #43A047;
+      --dairy-bg: #FFF9C4;   --dairy-fg: #1E88E5;
+      --pantry-bg: #D7CCC8;  --pantry-fg: #6D4C41;
+      --bakery-bg: #FFE0B2;  --bakery-fg: #FB8C00;
+      --bev-bg: #BBDEFB;     --bev-fg: #1976D2;
+      --frozen-bg: #E1BEE7;  --frozen-fg: #8E24AA;
+      --display: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--body);
       font-size: 17px;
+      line-height: 1.6;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
-    header {
-      background: var(--primary);
-      color: #2c3e0f;
-      padding: 40px 20px;
-      text-align: center;
+    a { color: var(--green-dark); }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--green-dark);
+      outline-offset: 2px;
+      border-radius: 6px;
     }
-    header .inner { max-width: 720px; margin: 0 auto; }
-    header h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: -0.5px; }
-    header p { margin: 0; font-size: 16px; color: #3c5018; }
-    h2 {
-      color: var(--primary-dark);
-      font-size: 22px;
-      margin: 40px 0 10px;
-      letter-spacing: -0.3px;
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- nav ---------- */
+    nav {
+      background: var(--green);
     }
-    h3 { color: var(--text); font-size: 18px; margin: 24px 0 6px; }
-    p, li { color: var(--text); }
-    a { color: var(--primary-dark); }
-    .meta {
-      color: var(--text-secondary);
-      font-size: 15px;
-      margin-top: 6px;
+    .nav-inner {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 0;
     }
-    .card {
+    .wordmark {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+      font-family: var(--display);
+      font-weight: 600; font-size: 24px;
+      color: var(--green-ink);
+    }
+    .wordmark img { width: 36px; height: 36px; border-radius: 10px; display: block; }
+    .nav-links { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+    .nav-links a {
+      color: var(--green-ink); text-decoration: none; font-size: 15px; font-weight: 600;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .nav-links .nav-cta {
+      background: var(--green-dark); color: #fff;
+      padding: 9px 18px; border-radius: 999px;
+    }
+    .nav-links .nav-cta:hover { background: var(--green-deeper); text-decoration: none; }
+
+    /* ---------- hero ---------- */
+    .hero { background: var(--green); color: var(--green-ink); }
+    .hero-inner {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px;
+      align-items: center; padding: 56px 0 72px;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: var(--green-ink); color: var(--green);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.4px;
+      padding: 4px 14px; border-radius: 999px;
+      margin: 0 0 18px;
+    }
+    h1 {
+      font-family: var(--display); font-weight: 600;
+      font-size: clamp(38px, 5.5vw, 58px);
+      line-height: 1.08; letter-spacing: -0.5px;
+      margin: 0 0 18px;
+    }
+    .hero p.lede {
+      font-size: 19px; line-height: 1.55; margin: 0 0 28px;
+      color: var(--green-ink); max-width: 32em;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--green-dark); color: #fff;
+      font-family: var(--display); font-weight: 600; font-size: 19px;
+      text-decoration: none;
+      padding: 14px 34px; border-radius: 999px;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.18);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    }
+    .cta:hover { background: var(--green-deeper); }
+    .cta:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0,0,0,0.18); }
+    .cta-note { margin: 14px 0 0; font-size: 15px; color: var(--green-ink); opacity: 0.85; }
+
+    /* the live list card */
+    .list-demo { position: relative; justify-self: center; width: min(340px, 100%); }
+    .mascot-sticker {
+      position: absolute; top: -46px; right: -18px; z-index: 2;
+      width: 92px; height: 92px; border-radius: 50%;
+      border: 4px solid var(--surface);
+      background: #FDF7F5;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transform: rotate(6deg);
+    }
+    .list-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 20px;
-      margin: 18px 0;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+      padding: 18px 0 6px;
+      transform: rotate(-1.5deg);
     }
-    .tint {
-      background: var(--surface-tint);
-      border: none;
+    .list-section { padding: 4px 18px 10px; }
+    .list-section + .list-section { border-top: 1px solid #F0EBE6; padding-top: 12px; }
+    .pill {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
+      padding: 3px 12px; border-radius: 999px;
+      margin-bottom: 6px;
     }
-    ul { padding-left: 22px; }
-    li { margin: 6px 0; }
-    .muted { color: var(--text-muted); font-size: 15px; }
+    .pill .count { opacity: 0.65; font-weight: 600; margin-left: 4px; }
+    .pill.produce { background: var(--produce-bg); color: var(--produce-fg); }
+    .pill.dairy   { background: var(--dairy-bg);   color: var(--dairy-fg); }
+    .pill.pantry  { background: var(--pantry-bg);  color: var(--pantry-fg); }
+    .item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 7px 2px; font-size: 15.5px; color: var(--ink);
+    }
+    .item .qty { margin-left: auto; color: var(--ink-muted); font-size: 13.5px; }
+    .box {
+      width: 22px; height: 22px; flex: none;
+      border: 2px solid var(--green-dark); border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: transparent;
+    }
+    .box svg { width: 12px; height: 12px; opacity: 0; }
+    .item.done .box { background: var(--green-dark); }
+    .item.done .box svg { opacity: 1; }
+    .item.done { color: var(--ink-muted); }
+    /* one item checks itself off shortly after load */
+    @keyframes tick-box { to { background: var(--green-dark); } }
+    @keyframes tick-mark { to { opacity: 1; } }
+    @keyframes tick-text { to { color: var(--ink-muted); } }
+    .item.self-tick .box { animation: tick-box 0.25s ease-out 1.6s forwards; }
+    .item.self-tick .box svg { animation: tick-mark 0.25s ease-out 1.7s forwards; }
+    .item.self-tick { animation: tick-text 0.25s ease-out 1.7s forwards; }
+    @media (prefers-reduced-motion: reduce) {
+      .item.self-tick, .item.self-tick .box, .item.self-tick .box svg { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* scalloped edge between green and cream */
+    .scallop {
+      height: 22px;
+      background: radial-gradient(circle at 11px -6px, var(--green) 15px, rgba(0,0,0,0) 16px);
+      background-size: 22px 22px;
+      background-repeat: repeat-x;
+    }
+    .scallop.flip { transform: scaleY(-1); }
+
+    /* ---------- sections ---------- */
+    section { padding: 64px 0; }
+    h2 {
+      font-family: var(--display); font-weight: 600;
+      font-size: clamp(28px, 4vw, 38px);
+      color: var(--green-dark);
+      letter-spacing: -0.3px;
+      margin: 0 0 10px;
+    }
+    .section-lede { color: var(--ink-secondary); font-size: 18px; margin: 0 0 40px; max-width: 38em; }
+
+    /* steps */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px 24px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    }
+    .step img { width: 64px; height: 64px; display: block; margin-bottom: 14px; image-rendering: auto; }
+    .step-num {
+      display: inline-block;
+      background: var(--surface-tint); color: var(--green-dark);
+      font-family: var(--display); font-weight: 600; font-size: 14px;
+      padding: 2px 12px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .step h3 {
+      font-family: var(--display); font-weight: 500;
+      font-size: 21px; margin: 0 0 8px; color: var(--ink);
+    }
+    .step p { margin: 0; font-size: 16px; color: var(--ink-secondary); }
+
+    /* features */
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    }
+    .feature .pill { margin-bottom: 10px; }
+    .pill.bakery { background: var(--bakery-bg); color: var(--bakery-fg); }
+    .pill.bev    { background: var(--bev-bg);    color: var(--bev-fg); }
+    .pill.frozen { background: var(--frozen-bg); color: var(--frozen-fg); }
+    .feature h3 {
+      font-family: var(--display); font-weight: 500;
+      font-size: 20px; margin: 0 0 6px; color: var(--ink);
+    }
+    .feature p { margin: 0; font-size: 16px; color: var(--ink-secondary); }
+
+    /* screenshots */
+    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+    .shot { margin: 0; }
+    .shot img {
+      width: 100%; height: auto; display: block;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+    .shot figcaption {
+      text-align: center; font-size: 14px; color: var(--ink-secondary); margin-top: 10px;
+    }
+
+    /* closing cta */
+    .closing { background: var(--green); text-align: center; padding: 64px 24px 72px; }
+    .closing h2 { color: var(--green-ink); margin-bottom: 8px; }
+    .closing p { color: var(--green-ink); margin: 0 0 26px; font-size: 18px; }
+
     footer {
       text-align: center;
-      color: var(--text-muted);
+      color: var(--ink-muted);
       font-size: 14px;
-      padding: 24px 20px 40px;
-      border-top: 1px solid var(--border);
-      margin-top: 48px;
+      padding: 32px 20px 44px;
     }
-    code {
-      background: var(--surface-tint);
-      padding: 2px 6px;
-      border-radius: 6px;
-      font-size: 14px;
+    footer a { color: var(--ink-secondary); }
+    footer .links { margin-bottom: 8px; }
+    footer .links a { margin: 0 10px; }
+
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 64px; padding: 40px 0 64px; }
+      .list-demo { justify-self: center; }
+      .steps, .features, .shots { grid-template-columns: 1fr; }
+      .shots { max-width: 340px; margin: 0 auto; }
+      .nav-links a:not(.nav-cta) { display: none; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="inner">
-      <h1>Pip — Privacy Policy</h1>
-      <p>The Meal Prep Buddy</p>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="/">
+        <img src="/assets/favicon.png" alt="" width="36" height="36" />
+        Pip
+      </a>
+      <div class="nav-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/support/">Support</a>
+        <a class="nav-cta" href="https://app.pipmeals.com">Open Pip</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">The Meal Prep Buddy</p>
+        <h1>Recipes in.<br />Groceries sorted.</h1>
+        <p class="lede">
+          Paste any recipe link and Pip turns it into a shopping list that's already
+          organized by aisle — with your cookbook, macros, and your family's list all in one place.
+        </p>
+        <a class="cta" href="https://app.pipmeals.com">Open Pip</a>
+        <p class="cta-note">Runs in your browser — nothing to install.</p>
+      </div>
+
+      <div class="list-demo" aria-hidden="true">
+        <img class="mascot-sticker" src="/assets/pip-mascot.png" alt="" width="92" height="92" />
+        <div class="list-card">
+          <div class="list-section">
+            <span class="pill produce">Produce<span class="count">3</span></span>
+            <div class="item done"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Roma tomatoes<span class="qty">4</span></div>
+            <div class="item done"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Yellow onion<span class="qty">2</span></div>
+            <div class="item self-tick"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cilantro<span class="qty">1 bunch</span></div>
+          </div>
+          <div class="list-section">
+            <span class="pill dairy">Dairy<span class="count">2</span></span>
+            <div class="item"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Butter<span class="qty">1 stick</span></div>
+            <div class="item"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Parmesan<span class="qty">4 oz</span></div>
+          </div>
+          <div class="list-section">
+            <span class="pill pantry">Pantry<span class="count">2</span></span>
+            <div class="item"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Spaghetti<span class="qty">1 lb</span></div>
+            <div class="item"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Olive oil<span class="qty">2 tbsp</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
+  <div class="scallop" role="presentation"></div>
 
-  <main class="wrap">
-    <p class="meta"><strong>Effective date:</strong> June 21, 2026</p>
-    <p class="meta"><strong>Last updated:</strong> June 21, 2026</p>
-
-    <p>
-      Pip (&ldquo;Pip,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is a meal-planning and
-      shopping-list app. This policy explains what data we collect, why, who we share it with, and the
-      choices you have. By using Pip you agree to this policy.
-    </p>
-
-    <h2>Who we are</h2>
-    <div class="card tint">
-      <p style="margin:0">
-        Pip is developed by Dillan Smith. For any privacy question or request, contact
-        <a href="mailto:dillan.csmith@gmail.com">dillan.csmith@gmail.com</a>.
-      </p>
+  <section id="how">
+    <div class="wrap">
+      <h2>From recipe to cart in three steps</h2>
+      <p class="section-lede">No typing out ingredients. No rearranging the list in the store.</p>
+      <div class="steps">
+        <div class="step">
+          <img src="/assets/pip_scroll_icon.png" alt="" width="64" height="64" />
+          <span class="step-num">Step 1</span>
+          <h3>Paste a recipe link</h3>
+          <p>Drop in a link from any recipe site — or paste the recipe as plain text.</p>
+        </div>
+        <div class="step">
+          <img src="/assets/pip_pencil_icon.png" alt="" width="64" height="64" />
+          <span class="step-num">Step 2</span>
+          <h3>Pip reads it for you</h3>
+          <p>Ingredients, quantities, and servings are pulled out and tidied up automatically.</p>
+        </div>
+        <div class="step">
+          <img src="/assets/pip_shopping_cart_icon.png" alt="" width="64" height="64" />
+          <span class="step-num">Step 3</span>
+          <h3>Shop a sorted list</h3>
+          <p>Everything lands on your shopping list grouped by aisle, ready to check off.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <h2>Information we collect</h2>
-
-    <h3>Account information</h3>
-    <p>
-      When you create an account we collect your email address and name. Authentication is handled by our
-      identity provider, Clerk. We use this to sign you in, sync your data across devices, and contact you
-      about your account.
-    </p>
-
-    <h3>Your content</h3>
-    <p>
-      We store the content you create in the app so it can sync and be shared with the families you join:
-      recipes, ingredients, shopping lists, tags, and family/group membership. This data is stored on our
-      servers and tied to your account.
-    </p>
-
-    <h3>Recipe parsing &amp; AI features</h3>
-    <p>
-      When you import a recipe from a web link or text, or use AI features (nutrition estimates,
-      ingredient tagging, or substitutions), the relevant recipe URL or text is sent to our AI processing
-      provider (OpenAI) to extract and structure the recipe. This content is processed to return a result
-      to you and is not used to train models. We do not send your account identity to the AI provider with
-      this content beyond what is needed to perform the request.
-    </p>
-
-    <h3>Diagnostics &amp; crash data</h3>
-    <p>
-      To keep the app stable we use Sentry to collect crash reports and diagnostic information (e.g. device
-      type, OS version, error details). This data helps us find and fix bugs.
-    </p>
-
-    <h3>Subscriptions (Pip Pro)</h3>
-    <p>
-      If and when you purchase a Pip Pro subscription, the purchase is processed by Apple. We do not
-      receive or store your payment card details. We (and our subscription-management provider, RevenueCat)
-      receive your subscription status and a purchase identifier so we can unlock paid features and manage
-      renewals. We do not see your full payment information.
-    </p>
-
-    <h2>How we use your information</h2>
-    <ul>
-      <li>Provide core features: shopping lists, recipes, family sharing, and sync across your devices.</li>
-      <li>Process recipe imports and AI features you request.</li>
-      <li>Maintain reliability and fix crashes.</li>
-      <li>Manage subscriptions and unlock paid features (when applicable).</li>
-      <li>Communicate with you about your account or important changes.</li>
-    </ul>
-
-    <h2>Who we share data with</h2>
-    <p>We share data only with service providers that help us run Pip, and only as needed:</p>
-    <div class="card">
-      <ul style="margin:0">
-        <li><strong>Clerk</strong> — account authentication and management.</li>
-        <li><strong>OpenAI</strong> — recipe parsing and AI features (processes recipe content you submit).</li>
-        <li><strong>Sentry</strong> — crash and diagnostics reporting.</li>
-        <li><strong>Apple</strong> — payment processing for subscriptions.</li>
-        <li><strong>RevenueCat</strong> — subscription status management (when you subscribe).</li>
-        <li><strong>Railway</strong> — cloud hosting for our servers and database.</li>
-      </ul>
+  <section id="features" style="padding-top: 0;">
+    <div class="wrap">
+      <h2>Everything for the week's cooking</h2>
+      <p class="section-lede">Pip keeps the whole loop in one place — saving recipes, planning meals, and shopping for them.</p>
+      <div class="features">
+        <div class="feature">
+          <span class="pill bakery">Cookbook</span>
+          <h3>Every recipe you save, one shelf</h3>
+          <p>Imported recipes live in your cookbook with cuisine and protein tags, ready to send to the list again next week.</p>
+        </div>
+        <div class="feature">
+          <span class="pill produce">Nutrition</span>
+          <h3>Macros at a glance</h3>
+          <p>Protein, carbs, fat, and calories are estimated per serving for every recipe you import.</p>
+        </div>
+        <div class="feature">
+          <span class="pill bev">Family sharing</span>
+          <h3>One list for the household</h3>
+          <p>Share your list and cookbook with your family — everyone sees changes as they happen.</p>
+        </div>
+        <div class="feature">
+          <span class="pill frozen">Smart combining</span>
+          <h3>No duplicate onions</h3>
+          <p>When two recipes need the same ingredient, Pip merges them into a single line with the right total.</p>
+        </div>
+      </div>
     </div>
-    <p class="muted">
-      We do not sell your personal information, and we do not share it for advertising.
-    </p>
+  </section>
 
-    <h2>Data retention</h2>
-    <p>
-      We keep your account data for as long as your account is active. When you delete your account, we
-      delete your personal data and content from our systems, as described below.
-    </p>
-
-    <h2>Your rights &amp; choices</h2>
-
-    <h3>Delete your account</h3>
-    <p>
-      You can permanently delete your account and associated data at any time from within the app:
-      <strong>Settings &rarr; Delete Account</strong>. This removes your recipes, shopping lists, and family
-      membership data, and deletes your authentication record. Deletion is permanent and completed within
-      30 days. If you have an active subscription, cancel it in your device&rsquo;s subscription settings
-      first, as Apple manages billing.
-    </p>
-
-    <h3>Access &amp; correction</h3>
-    <p>
-      You can view and edit your content directly in the app. For any other request regarding your data,
-      contact us at <a href="mailto:dillan.csmith@gmail.com">dillan.csmith@gmail.com</a>.
-    </p>
-
-    <h2>Children&rsquo;s privacy</h2>
-    <p>
-      Pip is not directed to children under 13, and we do not knowingly collect personal information from
-      children under 13. If you believe a child has provided us personal information, contact us and we will
-      delete it.
-    </p>
-
-    <h2>International users</h2>
-    <p>
-      Your data may be processed in the United States and other countries where our service providers
-      operate. By using Pip you consent to this processing.
-    </p>
-
-    <h2>Changes to this policy</h2>
-    <p>
-      We may update this policy from time to time. Material changes will be reflected by updating the
-      &ldquo;Last updated&rdquo; date above and, where appropriate, by notifying you in the app.
-    </p>
-
-    <h2>Contact us</h2>
-    <div class="card tint">
-      <p style="margin:0">
-        Questions about this policy or your data? Email
-        <a href="mailto:dillan.csmith@gmail.com">dillan.csmith@gmail.com</a>.
-      </p>
+  <section id="screens" style="padding-top: 0;">
+    <div class="wrap">
+      <h2>See it in action</h2>
+      <p class="section-lede">Real screens from the app — the list, the recipe, and the scraper that fills them.</p>
+      <div class="shots">
+        <figure class="shot">
+          <img src="/assets/shots/shopping-list.png" alt="Pip shopping list with ingredients grouped into Produce and Dairy category cards" loading="lazy" width="780" height="1688" />
+          <figcaption>Your list, grouped by aisle</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/shots/recipe-detail.png" alt="Pip recipe page for Creamy Tomato Basil Pasta showing macros per serving and grouped ingredients" loading="lazy" width="780" height="1688" />
+          <figcaption>Every recipe with macros per serving</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/assets/shots/add-recipe.png" alt="Pip add-recipe screen where you paste a recipe URL to import it" loading="lazy" width="780" height="1688" />
+          <figcaption>Paste a link, get the recipe</figcaption>
+        </figure>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <div class="scallop flip" role="presentation"></div>
+  <section class="closing">
+    <h2>Dinner plans start here</h2>
+    <p>Open Pip and paste your first recipe — it takes about a minute.</p>
+    <a class="cta" href="https://app.pipmeals.com">Open Pip</a>
+  </section>
 
   <footer>
-    &copy; 2026 Pip — The Meal Prep Buddy
+    <div class="links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/support/">Support</a>
+      <a href="mailto:dillan.csmith@gmail.com">Contact</a>
+    </div>
+    &copy; 2026 Pip — The Meal Prep Buddy · Made by <a href="https://nobigdill.dev">Dillan</a>
   </footer>
 </body>
 </html>

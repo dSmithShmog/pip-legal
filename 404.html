@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pip — Page not found</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <script>
+    // Recipe share links are minted against the apex domain
+    // (https://pipmeals.com/share/<token>) but the app lives at
+    // app.pipmeals.com — forward them there with path + query intact.
+    (function () {
+      var p = window.location.pathname;
+      if (p.indexOf('/share/') === 0) {
+        window.location.replace('https://app.pipmeals.com' + p + window.location.search);
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      --primary-dark: #558B2F;
+      --bg: #FFF5E6;
+      --text: #5D4037;
+      --text-secondary: #8D6E63;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    img { width: 120px; height: 120px; border-radius: 50%; }
+    h1 { font-size: 28px; margin: 18px 0 8px; color: var(--primary-dark); }
+    p { margin: 0 0 20px; color: var(--text-secondary); }
+    a.btn {
+      display: inline-block;
+      background: var(--primary-dark);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/assets/pip-mascot.png" alt="" />
+    <h1>This page wandered off</h1>
+    <p>The page you're looking for isn't here. The app itself lives at app.pipmeals.com.</p>
+    <a class="btn" href="/">Back to pipmeals.com</a>
+  </main>
+</body>
+</html>
