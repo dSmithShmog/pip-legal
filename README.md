@@ -1,11 +1,20 @@
-# pip-legal
+# pip-site
 
-Public legal pages for **Pip — The Meal Prep Buddy**, hosted on GitHub Pages.
+Public website for **Pip — The Meal Prep Buddy**, served by GitHub Pages at [pipmeals.com](https://pipmeals.com).
 
-- Privacy Policy: `index.html` → `https://<user>.github.io/pip-legal/`
+## Pages
 
-This repo is intentionally **public** so GitHub Pages can serve it for free (the main app repo is private). It contains no source code or secrets — only static legal pages required for App Store / Google Play submission.
+| Path | Page |
+|------|------|
+| `index.html` | Landing page |
+| `privacy/index.html` | Privacy Policy (required for App Store / Google Play) |
+| `support/index.html` | Support |
+| `404.html` | Not-found page |
+
+Static assets (mascot, icons, screenshots) live in `assets/`.
+
+This repo is intentionally **public** so GitHub Pages can serve it for free (the main app repo is private). It contains no source code or secrets — only static pages.
 
 ## Update
 
-Edit `index.html`, commit, push. GitHub Pages redeploys automatically (~1 min).
+Edit the HTML, commit, push to `main`. GitHub Pages redeploys automatically (~1 min). The custom domain is configured via the `CNAME` file — don't delete it.
